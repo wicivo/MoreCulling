@@ -2,7 +2,7 @@
 
 <img src="https://github.com/fxmorin/MoreCulling/blob/master/src/main/resources/assets/moreculling/MoreCulling.png?raw=true" alt="MoreCulling Icon"/>
 
-# More Culling
+# More Culling 
 
 [![Mod Environment](https://img.shields.io/badge/Enviroment-Client-blue?style=round)](https://github.com/fxmorin/moreculling)
 [![Latest Minecraft Version](https://img.shields.io/badge/Latest%20MC%20Support-1.20.5-green?style=round)](https://github.com/fxmorin/moreculling/releases)
