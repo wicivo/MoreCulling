@@ -18,7 +18,7 @@
 **Make sure to report any bugs [here](https://github.com/fxmorin/moreculling/issues)!**  
 
 **Head over to the [wiki](https://github.com/fxmorin/MoreCulling/wiki) for information on:**  
-What's Culled, Performance, Compatibility, Bug Fixes, and more!
+What's Culled, Performance, Compatibility, Bug Fixes, and more! 
 
 </div>
   
