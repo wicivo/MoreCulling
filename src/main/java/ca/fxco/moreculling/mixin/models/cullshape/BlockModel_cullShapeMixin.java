@@ -6,12 +6,14 @@ import ca.fxco.moreculling.api.model.ExtendedUnbakedModel;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.mojang.math.Transformation;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.BlockElement;
 import net.minecraft.client.renderer.block.model.BlockElementFace;
 import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
-import net.minecraft.client.resources.model.*;
+import net.minecraft.client.resources.model.BakedModel;
+import net.minecraft.client.resources.model.Material;
+import net.minecraft.client.resources.model.ModelBaker;
+import net.minecraft.client.resources.model.ModelState;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
@@ -122,16 +124,7 @@ public abstract class BlockModel_cullShapeMixin implements ExtendedUnbakedModel 
         if (!bakedOpacity.moreculling$canSetCullingShape()) {
             return;
         }
-        UnbakedModel findMe = parent;
-        Map<ModelResourceLocation, UnbakedModel> topLevelModels = Minecraft.getInstance().modelBakery.topLevelModels;
-        ModelResourceLocation location = null;
-        for (Map.Entry<ModelResourceLocation, UnbakedModel> entry : topLevelModels.entrySet()) {
-            if (entry.getValue() == findMe) {
-                location = entry.getKey();
-                break;
-            }
-        }
-        ResourceLocation id = location.id();
+        ResourceLocation id = parent.parentLocation;
         if (moreculling$getUseModelShape(id) && settings.getRotation() == Transformation.identity()) {
             List<BlockElement> modelElementList = this.getElements();
             if (modelElementList != null && !modelElementList.isEmpty()) {
